@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Builder - Pokémon Database</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/team-builder.css">
+    <link rel="stylesheet" href="css/weakness-analyzer.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <script src="js/team-builder.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">PPokémon Database</a></h1>
+        <nav>
+            <ul>
+                <li><a href="pokedex.html">Pokédex</a></li>
+                <li><a href="emulator.html">Emulator</a></li>
+                <li><a href="type-chart.html">Type Chart</a></li>
+                <li><a href="weakness-analyzer.html">Weakness Analyzer</a></li>
+                <li><a href="team-builder.html">Team Builder</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Team Analyzer</h2>
+            <p>Build your team and analyze its defensive strengths and weaknesses</p>
+        </section>
+        
+        <div class="team-container">
+            <div class="team-controls">
+                <button id="add-pokemon">Add Pokémon</button>
+                <button id="analyze-team">Analyze Team</button>
+                <button id="clear-team">Clear Team</button>
+            </div>
+            
+            <div id="team-members">
+                <!-- Team members will be added here -->
+                <div class="pokemon-row">
+                    <div class="pokemon-info">
+                        <select class="pokemon-select primary-type">
+                            <option value="">-- Primary Type --</option>
+                            <option value="normal">Normal</option>
+                            <option value="fire">Fire</option>
+                            <option value="water">Water</option>
+                            <option value="electric">Electric</option>
+                            <option value="grass">Grass</option>
+                            <option value="ice">Ice</option>
+                            <option value="fighting">Fighting</option>
+                            <option value="poison">Poison</option>
+                            <option value="ground">Ground</option>
+                            <option value="flying">Flying</option>
+                            <option value="psychic">Psychic</option>
+                            <option value="bug">Bug</option>
+                            <option value="rock">Rock</option>
+                            <option value="ghost">Ghost</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="dark">Dark</option>
+                            <option value="steel">Steel</option>
+                            <option value="fairy">Fairy</option>
+                        </select>
+                        <select class="pokemon-select secondary-type">
+                            <option value="">-- Secondary Type (Optional) --</option>
+                            <option value="normal">Normal</option>
+                            <option value="fire">Fire</option>
+                            <option value="water">Water</option>
+                            <option value="electric">Electric</option>
+                            <option value="grass">Grass</option>
+                            <option value="ice">Ice</option>
+                            <option value="fighting">Fighting</option>
+                            <option value="poison">Poison</option>
+                            <option value="ground">Ground</option>
+                            <option value="flying">Flying</option>
+                            <option value="psychic">Psychic</option>
+                            <option value="bug">Bug</option>
+                            <option value="rock">Rock</option>
+                            <option value="ghost">Ghost</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="dark">Dark</option>
+                            <option value="steel">Steel</option>
+                            <option value="fairy">Fairy</option>
+                        </select>
+                        <div class="type-display"></div>
+                    </div>
+                    <div class="pokemon-analysis">
+                        <div class="analysis-section">
+                            <h4>Weaknesses</h4>
+                            <div class="weaknesses"><p>Select type(s)</p></div>
+                        </div>
+                        <div class="analysis-section">
+                            <h4>Resistances</h4>
+                            <div class="resistances"><p>Select type(s)</p></div>
+                        </div>
+                        <div class="analysis-section">
+                            <h4>Immunities</h4>
+                            <div class="immunities"><p>Select type(s)</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="team-summary" class="team-summary" style="display: none;">
+                <h3>Team Analysis</h3>
+                <div class="team-chart">
+                    <div class="chart-item">
+                        <h4>Team Weaknesses</h4>
+                        <div id="team-weaknesses"></div>
+                    </div>
+                    <div class="chart-item">
+                        <h4>Team Resistances</h4>
+                        <div id="team-resistances"></div>
+                    </div>
+                    <div class="chart-item">
+                        <h4>Team Immunities</h4>
+                        <div id="team-immunities"></div>
+                    </div>
+                </div>
+                <div id="team-rating"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pokémon Fan Database</p>
+    </footer>
+    
+    <script src="js/weakness-analyzer.js"></script>
+</body>
+</html>

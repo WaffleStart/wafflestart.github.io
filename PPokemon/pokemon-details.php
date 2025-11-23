@@ -1,0 +1,131 @@
+<?php
+  // pokemon-details.php - Displays detailed information about a single Pokémon
+  require_once 'auth-check.php';
+  // Get the Pokémon ID from URL parameter
+  $pokemon_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+  
+  if ($pokemon_id <= 0) {
+    // Redirect to pokedex if no valid ID provided
+    header("Location: pokedex.php");
+    exit;
+  }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pokemon-details.css">
+    <script defer src="js/pokemon-details.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1><a href="index.php">National Pokédex</a></h1>
+        <nav>
+            <ul>
+                <li><a href="pokedex.php">Pokédex</a></li>
+                <li><a href="emulator.php">Emulator</a></li>
+                <li><a href="type-chart.php">Type Chart</a></li>
+                <li><a href="weakness-analyzer.php">Weakness Analyzer</a></li>
+                <li><a href="team-builder.php">Team Builder</a></li>
+                <li class="logout"><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="pokemon-details" data-pokemon-id="<?php echo $pokemon_id; ?>">
+            <div id="loading-indicator">Loading Pokémon details...</div>
+            <div id="error-container" class="hidden"></div>
+            
+            <div id="pokemon-info" class="hidden">
+                <!-- Top Section: Basic Info and Sprites -->
+                <div class="pokemon-main">
+                    <div class="pokemon-header">
+                        <div class="pokemon-number">#<span id="pokemon-id"></span></div>
+                        <h2 id="pokemon-name"></h2>
+                        <div id="pokemon-types"></div>
+                    </div>
+                    
+                    <div class="pokemon-sprites">
+                        <div class="sprite-card">
+                            <h3>Default</h3>
+                            <img id="sprite-front-default" alt="Default sprite">
+                        </div>
+                        <div class="sprite-card">
+                            <h3>Shiny</h3>
+                            <img id="sprite-front-shiny" alt="Shiny sprite">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Middle Section: Stats and Abilities -->
+                <div class="pokemon-data-container">
+                    <div class="pokemon-stats-container">
+                        <h3>Base Stats</h3>
+                        <div id="stats-container"></div>
+                        <div class="stats-total">
+                            <span>Total:</span>
+                            <span id="stats-total-value">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pokemon-abilities-container">
+                        <h3>Abilities</h3>
+                        <ul id="abilities-list"></ul>
+                        
+                        <div class="pokemon-physicals">
+                            <div class="physical-stat">
+                                <span>Height</span>
+                                <span id="pokemon-height">0</span>
+                            </div>
+                            <div class="physical-stat">
+                                <span>Weight</span>
+                                <span id="pokemon-weight">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Moves Section -->
+                <div class="pokemon-moves">
+                    <h3>Moves</h3>
+                    <div class="search-container">
+                        <input type="text" id="move-search" placeholder="Search moves...">
+                    </div>
+                    <table id="moves-table">
+                        <thead>
+                            <tr>
+                                <th>Move</th>
+                                <th>Level</th>
+                                <th>Method</th>
+                            </tr>
+                        </thead>
+                        <tbody id="moves-list"></tbody>
+                    </table>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="navigation-buttons">
+                    <a href="pokedex.php" class="btn btn-back">Back to Pokédex</a>
+                    <div class="pokemon-navigation">
+                        <a id="prev-pokemon" class="btn btn-nav">&lt; Previous</a>
+                        <a id="next-pokemon" class="btn btn-nav">Next &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ability Tooltip (hidden by default) -->
+        <div id="ability-tooltip" class="hidden"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pokémon Fan Database</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+.emulator-container {
+    margin: 20px auto;
+    width: 70%;
+    max-width: 800px;
+    height: 500px;
+    text-align: center;
+}
+.row-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.buttons {
+    margin-top: 20px;
+}
+.buttons button, .row-buttons button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buttons button:hover, .row-buttons button:hover {
+    background-color: #d60000;
+}
+footer {
+    margin-top: 40px;
+}

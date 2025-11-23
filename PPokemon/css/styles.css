@@ -1,0 +1,145 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #ff0000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Search Bar */
+#search {
+    margin: 15px;
+    padding: 8px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ff4444;
+    cursor: pointer;
+    position: relative;
+}
+
+th:hover {
+    background-color: #ff6666;
+}
+
+/* Sorting Indicator */
+th.sorted-asc::after {
+    content: " ▲";
+}
+
+th.sorted-desc::after {
+    content: " ▼";
+}
+
+/* Type Badge Styling */
+.type-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    margin: 2px;
+    text-transform: capitalize;
+}
+
+/* Pokémon Sprites */
+td img {
+    width: 100px;
+    height: 100px;
+}
+
+h1 a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.auth-button {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.auth-button:hover {
+    background-color: #cc0000;
+}
+
+.logout {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/*///////////////////*/
+

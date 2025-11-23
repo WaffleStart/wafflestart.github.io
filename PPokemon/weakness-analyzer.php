@@ -1,0 +1,125 @@
+<?php
+  // weakness-analyzer.php - Pokémon type weakness and resistance analyzer
+  require_once 'auth-check.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weakness Analyzer - Pokémon Database</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/weakness-analyzer.css">
+    <script defer src="js/script.js"></script>
+    <script src="js/weakness-analyzer.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1><a href="index.php">PPokémon Database</a></h1>
+        <nav>
+            <ul>
+            <li><a href="pokedex.php">Pokédex</a></li>
+                <li><a href="emulator.php">Emulator</a></li>
+                <li><a href="type-chart.php">Type Chart</a></li>
+                <li><a href="weakness-analyzer.php">Weakness Analyzer</a></li>
+                <li><a href="team-builder.php">Team Builder</a></li>
+                <li class="logout"><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Type Weakness Analyzer</h2>
+            <p>Select Pokémon types to analyze weaknesses and resistances</p>
+        </section>
+        
+        <div class="type-selector">
+            <div class="select-container">
+                <div>
+                    <label for="primary-type">Primary Type:</label>
+                    <select id="primary-type">
+                        <option value="">-- Select Type --</option>
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="grass">Grass</option>
+                        <option value="ice">Ice</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="flying">Flying</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="bug">Bug</option>
+                        <option value="rock">Rock</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="secondary-type">Secondary Type:</label>
+                    <select id="secondary-type">
+                        <option value="">-- None --</option>
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="grass">Grass</option>
+                        <option value="ice">Ice</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="flying">Flying</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="bug">Bug</option>
+                        <option value="rock">Rock</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="type-display" class="type-display">
+                <!-- Type badges will be displayed here -->
+            </div>
+            
+            <div class="results">
+                <div class="result-section">
+                    <h3>Weaknesses</h3>
+                    <div id="weaknesses">
+                        <p>Select a type to see weaknesses</p>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Resistances</h3>
+                    <div id="resistances">
+                        <p>Select a type to see resistances</p>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Immunities</h3>
+                    <div id="immunities">
+                        <p>Select a type to see immunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pokémon Fan Database</p>
+    </footer>
+</body>
+</html>

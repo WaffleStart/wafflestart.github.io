@@ -1,0 +1,183 @@
+/* Pokedex-specific styles */
+
+/* Search Bar */
+#search {
+    margin: 20px auto;
+    padding: 12px 15px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#search:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff4444;
+    background-color: #3a3a3a;
+}
+
+#search::placeholder {
+    color: #999;
+}
+
+/* Table Styling for Pokedex */
+#pokedex table {
+    width: 85%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#pokedex th {
+    background-color: #ff4444;
+    color: white;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+#pokedex th:hover {
+    background-color: #ff6666;
+}
+
+#pokedex td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#pokedex tr:last-child td {
+    border-bottom: none;
+}
+
+/* Sorting Indicator */
+#pokedex th.sorted-asc::after {
+    content: " ▲";
+    font-size: 12px;
+}
+
+#pokedex th.sorted-desc::after {
+    content: " ▼";
+    font-size: 12px;
+}
+
+/* Make table rows in pokedex clickable */
+#pokemon-list tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#pokemon-list tr:hover {
+    background-color: #3a3a3a;
+}
+
+/* Pokémon Sprites in table */
+#pokedex td img {
+    width: 96px;
+    height: 96px;
+    transition: transform 0.3s ease;
+    image-rendering: pixelated;
+}
+
+#pokedex td img:hover {
+    transform: scale(1.2);
+}
+
+/* Pokemon number column */
+#pokedex td:first-child {
+    font-weight: bold;
+    color: #aaa;
+}
+
+/* Pokemon name styling */
+#pokedex td:nth-child(3) a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+#pokedex td:nth-child(3) a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Type Badge Styling */
+#pokedex .type-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 2px;
+    text-transform: capitalize;
+    font-size: 12px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading indicator */
+#loading-indicator {
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 18px;
+    color: #aaa;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 500px;
+}
+
+/* End message */
+#end-message {
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 16px;
+    color: #aaa;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 500px;
+}
+
+/* Responsive adjustments for pokedex */
+@media (max-width: 768px) {
+    #search {
+        width: 80%;
+    }
+    
+    #pokedex table {
+        width: 95%;
+    }
+    
+    #pokedex th, #pokedex td {
+        padding: 8px 5px;
+        font-size: 14px;
+    }
+    
+    #pokedex td img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* For extra small screens */
+@media (max-width: 480px) {
+    #pokedex th:nth-child(4), #pokedex td:nth-child(4),
+    #pokedex th:nth-child(5), #pokedex td:nth-child(5) {
+        display: none; /* Hide type and abilities columns on very small screens */
+    }
+}

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Emulator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/emulator.css">
+    <script src="https://www.emulatorjs.com/loader.js"></script>
+    <script src="js/emulator.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">PPokémon Database</a></h1>
+        <nav>
+            <ul>
+                <li><a href="pokedex.html">Pokédex</a></li>
+                <li><a href="emulator.html">Emulator</a></li>
+                <li><a href="type-chart.html">Type Chart</a></li>
+                <li><a href="weakness-analyzer.html">Weakness Analyzer</a></li>
+                <li><a href="team-builder.html">Team Builder</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="emulator-container">
+        <div id='game' style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <div class="row-buttons">
+        <button onclick="loadGame('emerald')">Load Pokémon Emerald</button>
+        <button onclick="loadGame('firered')">Load Pokémon FireRed</button>
+    </div>
+
+    <div class="buttons">
+    <button id="romFile" onclick="uploadFile()">Load Custom Rom (Rom Hacks)</button>
+    </div>
+    <script>
+            EJS_player = '#game';
+            EJS_core = 'gba';
+            EJS_gameUrl = 'roms/pokemon-emerald.gba'; // Default game set to Pokémon Emerald
+            EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/';
+    </script>
+
+    <script src='https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js'></script>
+
+    <footer>
+        <p>&copy; 2025 Pokémon Fan Database</p>
+    </footer>
+</body>
+</html>
